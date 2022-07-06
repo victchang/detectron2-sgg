@@ -7,7 +7,7 @@ A scene graph generation codebase attached to detectron2
 - [ ] add some data resampling methods
 
 ## Overview
-This work provides a clean and general codebase for scene graph generation that is attached to [detectron2](https://github.com/facebookresearch/detectron2). While there already exists [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch), it is built on top of deprecated maskrcnn-benchmark. Being the successor of maskrcnn benchmark, detectron2 has faster speed in both training and inference. As a result, this work is built in order to take such advantage, and deliver an easy-to-use framework like Scene-Graph-Benchmark.pytorch.
+This work provides a clean and general codebase for scene graph generation that is attached to [detectron2](https://github.com/facebookresearch/detectron2). While there already exists [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch), it is built on top of deprecated [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark). Being the successor of maskrcnn-benchmark, detectron2 has higher throughputs in both training and inference. As a result, this work is built in order to take such advantage, and deliver an easy-to-use framework like Scene-Graph-Benchmark.pytorch.
 This work is modified from [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch) and [fcsgg](https://github.com/liuhengyue/fcsgg).
 
 
