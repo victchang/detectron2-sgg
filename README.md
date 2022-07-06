@@ -74,12 +74,16 @@ You can also modify the config file used to build the detector. See [here](https
 ## Scene Graph Generation as a ROI head
 Following the definition in [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch/blob/master/README.md#scene-graph-generation-as-roi_head), sgg models are designed as a roi head, and placed under ```d2sgg/modeling/roi_heads/relation_head```
 
+### Building sgg models
+See [building sgg models]()
+
 ### SGG Training
 You can launch the sgg training with the provided scripts:
 ```
 ./scripts/relation_train.sh  # for training
 ```
 The settings for PredCls, SGCls, and SGDet are similar to [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch/blob/master/README.md#perform-training-on-scene-graph-generation)
+
 For **Predicate Classification (PredCls)**:
 ```
 MODEL.RELATION.USE_GT_LABEL True MODEL.RELATION.USE_GT_BOX True
