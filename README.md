@@ -2,6 +2,7 @@
 A scene graph generation codebase attached to detectron2
 
 ## TODO
+- [ ] initial release
 - [ ] add predcls and sgcls
 - [ ] add some common benchmarks
 - [ ] add some data resampling methods
