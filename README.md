@@ -14,7 +14,7 @@ This work is modified from [Scene-Graph-Benchmark.pytorch](https://github.com/Ka
 
 ## Installation
 ### Requirements
-Following detectron2 v0.5, the requirements are
+According to detectron2 v0.5, the requirements are
 - Linux or macOS with Python ≥ 3.6
 - PyTorch ≥ 1.7 and torchvision that matches the PyTorch installation
 - OpenCV is optional but needed by demo and visualization
