@@ -25,7 +25,8 @@ git clone https://github.com/victchang/detectron2-sgg.git
 cd detectron2-sgg
 pip install -r requirements.txt
 ```
-## Dataset Preparation (by [fcsgg](https://github.com/liuhengyue/fcsgg))
+
+## Dataset Preparation (by [fcsgg](https://github.com/liuhengyue/fcsgg/blob/master/README.md#dataset-preparation))
 1. Download the VG images [part1 (9 Gb)](https://cs.stanford.edu/people/rak248/VG_100K_2/images.zip) [part2 (5 Gb)](https://cs.stanford.edu/people/rak248/VG_100K_2/images2.zip). Extract these images to the file `datasets/vg/VG_100K`. 
 
 ```
@@ -58,6 +59,43 @@ fcsgg/
            |-- 2.jpg
            |-- ...
 
+```
+
+## Faster-RCNN Pre-Training
+You can download the pre-trained [Faster-RCNN (X-101-FPN)](), or train your own object detector:
+```
+./scripts/detector_pretrain.sh  # for training
+./scripts/detector_pretest.sh   # for testing
+```
+You can also modify the config file used to build the detector. See [here](https://github.com/facebookresearch/detectron2/blob/main/detectron2/config/defaults.py) for detailed configuraitons.
+###### NOTE: the pre-trained Faster-RCNN is not the same as [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch), since detectron2 and maskrcnn-benchmark are implemented [differently](https://detectron2.readthedocs.io/en/v0.5/notes/compatibility.html).
+
+## Scene Graph Generation as a ROI head
+Following the definition in [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch/blob/master/README.md#scene-graph-generation-as-roi_head), sgg models are designed as a roi head, and placed under ```d2sgg/modeling/roi_heads/relation_head```
+
+### SGG Training
+You can launch the sgg training with the provided scripts:
+```
+./scripts/relation_train.sh  # for training
+```
+The settings for PredCls, SGCls, and SGDet are similar to [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch/blob/master/README.md#perform-training-on-scene-graph-generation)
+For **Predicate Classification (PredCls)**:
+```
+MODEL.RELATION.USE_GT_LABEL True MODEL.RELATION.USE_GT_BOX True
+```
+For **Scene Graph Classificaiton (SGCls)**:
+```
+MODEL.RELATION.USE_GT_LABEL False MODEL.RELATION.USE_GT_BOX True
+```
+For **Scene Graph Detection (SGDet)**:
+```
+MODEL.RELATION.USE_GT_LABEL False MODEL.RELATION.USE_GT_BOX False
+```
+
+### SGG Evaluation
+You can launch the sgg testing with the provided scripts:
+```
+./scripts/relation_test.sh  # for training
 ```
 
 ## Citations
