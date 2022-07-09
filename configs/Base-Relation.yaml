@@ -1,0 +1,32 @@
+_BASE_: "./detection/X-101-FPN.yaml"
+DATASETS:
+  TRAIN: ("vg_train", )
+  TEST: ("vg_test", )
+  VAL: ("vg_val", )
+INPUT:
+  MIN_SIZE_TRAIN: (600, )
+  MAX_SIZE_TRAIN: 1000
+  MIN_SIZE_TEST: 600
+  MAX_SIZE_TEST: 1000
+MODEL:
+  RELATION_ON: True
+  ROI_RELATION_HEAD:
+    CONTEXT_POOLING_DIM: 2048
+    NUM_CLASSES: 150
+    NUM_PREDICATES: 50
+    POOLING_ALL_LEVELS: True
+    PREDICTOR: MSDNPredictor
+    USE_FREQ_BIAS: False
+    USE_GT_BOX: False
+    USE_GT_LABEL: False
+    USE_UNION_FEATURES: True
+  ROI_HEADS:
+    NAME: "RelationalROIHeads"
+  WEIGHTS: "/home/dcs405a/victchang/sgg/checkpoints/detection/X-101-FPN/model_final.pth"
+SEED: 3407  # 10760659
+SOLVER:
+  BASE_LR: 0.02
+  STEPS: (40000, )
+  MAX_ITER: 70000
+TEST:
+  DETECTIONS_PER_IMAGE: 80
