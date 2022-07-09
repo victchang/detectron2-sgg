@@ -8,5 +8,5 @@ export model="model_final.pth"
 
 python tools/train_net.py --dist-url $master_port --num-gpus $gpu_num --eval-only --config-file $archive/config.yaml \
     MODEL.WEIGHTS $archive/$model \
-    TEST.DETECTIONS_PER_IMAGE 60 \
-    OUTPUT_DIR $archive/testing
+    OUTPUT_DIR $archive/testing \
+    TEST.DETECTIONS_PER_IMAGE 60
