@@ -64,13 +64,16 @@ fcsgg/
 ```
 
 ## Faster-RCNN Pre-Training
-You can download the pre-trained [Faster-RCNN (X-101-FPN)](), or train your own object detector:
+You can download the pre-trained [Faster-RCNN (X-101-FPN)](). Place the checkpoint wherever you like, just to remember to modify the path of `MODEL.WEIGHTS`
+The pretrained detector achieves 14.92mAP/28.27mAP50 on VG150 testing set.
+###### NOTE: the pre-trained Faster-RCNN is not the same as [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch), since detectron2 and maskrcnn-benchmark are implemented [differently](https://detectron2.readthedocs.io/en/v0.5/notes/compatibility.html).
+
+You can also modify the config file to build and train the desired detector:
 ```
 ./scripts/detector_pretrain.sh  # for training
 ./scripts/detector_pretest.sh   # for testing
 ```
-You can also modify the config file used to build the detector. See [here](https://github.com/facebookresearch/detectron2/blob/main/detectron2/config/defaults.py) for detailed configuraitons.
-###### NOTE: the pre-trained Faster-RCNN is not the same as [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch), since detectron2 and maskrcnn-benchmark are implemented [differently](https://detectron2.readthedocs.io/en/v0.5/notes/compatibility.html).
+See [here](https://github.com/facebookresearch/detectron2/blob/main/detectron2/config/defaults.py) for detailed configuraitons.
 
 ## Scene Graph Generation as a ROI head
 Following the definition in [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch/blob/master/README.md#scene-graph-generation-as-roi_head), sgg models are designed as a roi head, and placed under ```d2sgg/modeling/roi_heads/relation_head```
