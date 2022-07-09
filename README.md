@@ -1,6 +1,8 @@
 # detectron2-sgg (Will be ready soon)
 A scene graph generation codebase attached to detectron2
 
+Currently only support sgdet
+
 ## TODO
 - [ ] initial release
 - [ ] add predcls and sgcls
