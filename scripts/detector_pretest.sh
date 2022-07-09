@@ -1,7 +1,7 @@
 #!/bin/bash
-export master_port="tcp://127.0.0.1:3407"
-export gpu_num=2
-export CUDA_VISIBLE_DEVICES="2,3"
+export master_port="tcp://127.0.0.1:10001"
+export gpu_num=4
+export CUDA_VISIBLE_DEVICES="0,1,2,3"
 
 export archive="/home/dcs405a/victchang/sgg/checkpoints/detection/X-101-FPN/"
 export model="model_final.pth"
