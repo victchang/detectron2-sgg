@@ -64,7 +64,7 @@ fcsgg/
 ```
 
 ## Faster-RCNN Pre-Training
-You can download the pre-trained [Faster-RCNN (X-101-FPN)](). Place the checkpoint wherever you like, just to remember to modify the path of `MODEL.WEIGHTS`
+You can download the pre-trained [Faster-RCNN (X-101-FPN)](). Place the checkpoint wherever you like, just remember to modify the path of `MODEL.WEIGHTS`.
 The pretrained detector achieves 14.92mAP/28.27mAP50 on VG150 testing set.
 ###### NOTE: the pre-trained Faster-RCNN is not the same as [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch), since detectron2 and maskrcnn-benchmark are implemented [differently](https://detectron2.readthedocs.io/en/v0.5/notes/compatibility.html).
 
